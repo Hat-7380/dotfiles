@@ -25,8 +25,26 @@ gsettings set $g accent-color 'purple'
 gsettings set $g monospace-font-name 'JetBrainsMono Nerd Font Mono 11'
 gsettings set $g enable-hot-corners false
 
+# Nautilus (file manager)
+n=org.gnome.nautilus
+gsettings set $n.preferences default-folder-viewer 'list-view'
+gsettings set $n.preferences date-time-format 'detailed'
+gsettings set $n.preferences show-image-thumbnails 'always'
+gsettings set $n.preferences show-directory-item-counts 'always'
+gsettings set $n.preferences show-create-link true
+gsettings set $n.list-view use-tree-view true
+gsettings set $n.list-view default-visible-columns "['name', 'size', 'type', 'date_modified']"
+gsettings set $n.icon-view default-zoom-level 'medium'
+gsettings set org.gtk.gtk4.Settings.FileChooser sort-directories-first true
+# "Open in Terminal" uses kitty
+gsettings set org.gnome.desktop.default-applications.terminal exec 'kitty'
+gsettings set org.gnome.desktop.default-applications.terminal exec-arg ''
+nautilus -q 2>/dev/null || true
+
 mkdir -p "$HOME/.config/fastfetch"
 ln -sfn "$DIR/../fastfetch/.config/fastfetch/config.jsonc" "$HOME/.config/fastfetch/config.jsonc"
 
 gnome-extensions enable blur-my-shell@aunetx 2>/dev/null || say "Install the 'Blur my Shell' extension, then re-run"
+# Purple Papirus folders (optional): get https://github.com/PapirusDevelopmentTeam/papirus-folders and run:
+#   papirus-folders -t Papirus-Dark -C violet
 say "Done. Log out and back in for everything to apply."

@@ -36,7 +36,7 @@ Installs Python (pip, pipx, [uv](https://docs.astral.sh/uv/)), Go, Rust (rustup)
 ./gnome/apply.sh
 ```
 
-Catppuccin Frappé across the desktop: dark mode, adw-gtk3, Papirus icons, purple accent, recolored GTK3/GTK4 apps, Blur my Shell and a matching fastfetch. Your old settings are backed up first.
+Catppuccin Frappé across the desktop: dark mode, adw-gtk3, Papirus icons, purple accent, recolored GTK3/GTK4 apps, Blur my Shell, a tuned Nautilus (list view, tree sidebar, detailed dates, thumbnails, kitty as terminal) and a matching fastfetch. Your old settings are backed up first.
 
 ## Shortcuts
 

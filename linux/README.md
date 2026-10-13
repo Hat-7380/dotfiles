@@ -1,14 +1,31 @@
 # 🐧 Linux
 
-Coming soon: my Linux setup (distro, desktop/window manager, keybindings, and system-specific configs).
+My Fedora setup: **kitty** + Catppuccin Frappé + JetBrainsMono Nerd Font, **zsh** with zinit plugins, and the **oh-my-posh** `zen` prompt.
 
-The shared configs in this repo (zsh, bash, Alacritty, btop, VS Code) already work on Linux. `install.sh` links them to the right places.
+| Tool | Config |
+|------|--------|
+| kitty (90% opacity, beam cursor with trail, round powerline tabs) | [`kitty/`](kitty/.config/kitty/) |
+| zsh + [zinit](https://github.com/zdharma-continuum/zinit): syntax highlighting, completions, autosuggestions, fzf-tab | [`zsh/.zshrc`](zsh/.zshrc) |
+| [oh-my-posh](https://ohmyposh.dev) `zen` prompt | [`ohmyposh/`](ohmyposh/.config/ohmyposh/zen.toml) |
+| `fzf` + `zoxide` | loaded in `.zshrc` |
 
-To install the CLI tools on Linux, either use [Homebrew on Linux](https://docs.brew.sh/Homebrew-on-Linux) with the `Brewfile`, or your distro's package manager:
+## Install
 
 ```bash
-# Debian / Ubuntu
-sudo apt install zsh git fzf bat fd-find btop
-# Arch
-sudo pacman -S zsh git fzf bat fd btop lsd eza lazygit git-delta starship fastfetch
+git clone https://github.com/Hat-7380/dotfiles.git ~/dotfiles
+cd ~/dotfiles/linux
+./install.sh
 ```
+
+Works on Fedora (dnf), Debian/Ubuntu (apt), Arch (pacman) and macOS (brew). It installs the packages, oh-my-posh and the Nerd Font, then symlinks the configs. Anything it replaces is backed up as `<file>.bak-<timestamp>`, so it is safe to re-run. Open a new kitty window afterwards; the first launch downloads the zsh plugins.
+
+> This uses `linux/zsh/.zshrc`, not the macOS Powerlevel10k one in `zsh/`. Don't run the top-level `install.sh` on top of it.
+
+## Shortcuts
+
+| Keys | Action |
+|---|---|
+| `Ctrl+C` / `Ctrl+V` | Copy (or interrupt) / paste |
+| `Ctrl+Shift` `+` / `-` / `Backspace` | Font bigger / smaller / reset |
+| `Ctrl+Shift+O` / `Ctrl+Shift+P` | Opacity up / down |
+| `Ctrl+P` / `Ctrl+N` | Search shell history back / forward |

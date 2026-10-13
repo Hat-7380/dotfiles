@@ -28,7 +28,7 @@
 | 🍺 | **Homebrew** | [`Brewfile`](Brewfile) | every CLI tool, app, font, and VS Code extension I use |
 | 🖼️ | **Wallpapers** | [`wallpapers/`](wallpapers/) | with credits |
 | ⌨️ | **Shortcuts** | [`SHORTCUTS.md`](SHORTCUTS.md) | all my keys and aliases on one page |
-| 🐧 | **Linux** | [`linux/`](linux/) | *coming soon* |
+| 🐧 | **Linux** | [`linux/`](linux/) | kitty + zsh + oh-my-posh, with its own installer |
 
 ## 🛠️ CLI tools I use
 

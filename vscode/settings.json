@@ -1,0 +1,14 @@
+{
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "workbench.colorTheme": "One Dark Pro Night Flat",
+    "workbench.startupEditor": "none",
+    "workbench.iconTheme": "material-icon-theme",
+    "files.autoSave": "afterDelay",
+    "editor.fontSize": 13,
+    "editor.fontFamily": "Fira Code",
+    "workbench.activityBar.compact": true,
+    "workbench.activityBar.autoHide": true,
+    "workbench.editor.empty.hint": "hidden",
+    "editor.minimap.enabled": false,
+    "chatgpt.localeOverride": "en-US"
+}

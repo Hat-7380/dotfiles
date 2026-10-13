@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Local, machine-specific or secret files (never commit these)
+*.local
+.env
+*.bak
+
+# Things that hold login tokens
+gh/hosts.yml

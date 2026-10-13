@@ -1,0 +1,41 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/catppuccin-frappe.toml"
+]
+
+# 2. WINDOW SETTINGS
+[window]
+padding = { x = 30, y = 30 }
+dynamic_padding = true
+decorations = "transparent" 
+blur = true 
+opacity = 0.95
+# This is the correct way to do Option as Alt in the latest version:
+option_as_alt = "Both"
+
+# 3. FONT SETTINGS
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+bold_italic = { family = "JetBrainsMono Nerd Font", style = "Bold Italic" }
+size = 16.0
+
+# 4. CURSOR SETTINGS
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+# 5. SELECTION SETTINGS
+[selection]
+save_to_clipboard = true
+
+# 6. SHELL SETTINGS
+[terminal.shell]
+program = "/bin/zsh"
+args = ["--login"]
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"

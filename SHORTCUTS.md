@@ -16,8 +16,6 @@ Everything I use day to day, in one place.
 | <kbd>Ctrl</kbd> + <kbd>U</kbd> | Delete the whole line | zsh |
 | <kbd>Ctrl</kbd> + <kbd>L</kbd> | Clear the screen | zsh |
 
-> fzf keys work in bash out of the box. For zsh, add `source <(fzf --zsh)` to `~/.zshrc.local`.
-
 ## Alacritty
 
 | Keys | What it does |

@@ -37,6 +37,10 @@ alias lt='lsd --tree'
 # ── PATH ─────────────────────────────────────────────────────
 export PATH="$HOME/.local/bin:$PATH"
 
+# ── fzf ──────────────────────────────────────────────────────
+# Ctrl+R history search, Ctrl+T file picker, Alt+C cd into folder
+command -v fzf >/dev/null && source <(fzf --zsh)
+
 # ── Functions ────────────────────────────────────────────────
 # Run claude from ~/projects/work when launched from the home folder
 # (home folder trust isn't remembered)

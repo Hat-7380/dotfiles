@@ -82,3 +82,9 @@ command -v fdfind >/dev/null && ! command -v fd >/dev/null && alias fd='fdfind'
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+
+# Show system info when a new kitty window opens (once, interactive only)
+if [[ -o interactive && -z "$FASTFETCH_SHOWN" && "$TERM" == "xterm-kitty" ]] && command -v fastfetch >/dev/null; then
+  export FASTFETCH_SHOWN=1
+  fastfetch
+fi

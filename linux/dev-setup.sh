@@ -14,6 +14,14 @@ if ! command -v code >/dev/null; then
   sudo dnf install -y code
 fi
 
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+say "VS Code settings + extensions"
+mkdir -p "$HOME/.config/Code/User"
+ln -sfn "$REPO_ROOT/vscode/settings.json" "$HOME/.config/Code/User/settings.json"
+grep -i '^vscode' "$REPO_ROOT/Brewfile" | sed 's/.*"\(.*\)".*/\1/' | while read -r ext; do
+  code --install-extension "$ext" --force || echo "Skipped $ext"
+done
+
 if ! command -v rustc >/dev/null && [ ! -x "$HOME/.cargo/bin/rustc" ]; then
   say "Rust (rustup)"
   curl -fsSL https://sh.rustup.rs | sh -s -- -y --no-modify-path

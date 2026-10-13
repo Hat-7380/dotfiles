@@ -28,7 +28,7 @@ Works on Fedora (dnf), Debian/Ubuntu (apt), Arch (pacman) and macOS (brew). It i
 ./dev-setup.sh
 ```
 
-Installs Python (pip, pipx, [uv](https://docs.astral.sh/uv/)), Go, Rust (rustup), gcc/make/cmake and VS Code. The prompt shows the Python, Node, Go and Rust version when you're inside a matching project.
+Installs Python (pip, pipx, [uv](https://docs.astral.sh/uv/)), Go, Rust (rustup), gcc/make/cmake and VS Code, with my VS Code settings and extensions. The prompt shows the Python, Node, Go and Rust version when you're inside a matching project.
 
 ## Shortcuts
 

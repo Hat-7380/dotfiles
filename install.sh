@@ -83,6 +83,10 @@ link_configs() {
   link alacritty/.config/alacritty/alacritty.toml     "$HOME/.config/alacritty/alacritty.toml"
   link btop/.config/btop/btop.conf                    "$HOME/.config/btop/btop.conf"
 
+  for theme in "$DOTFILES"/claude/themes/*.json; do
+    link "claude/themes/$(basename "$theme")" "$HOME/.claude/themes/$(basename "$theme")"
+  done
+
   if [[ "$OS" == "Darwin" ]]; then
     link linearmouse/.config/linearmouse/linearmouse.json "$HOME/.config/linearmouse/linearmouse.json"
     link vscode/settings.json "$HOME/Library/Application Support/Code/User/settings.json"

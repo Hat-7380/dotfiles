@@ -23,6 +23,7 @@
 | 🖥️ | **[Alacritty](https://alacritty.org)** | [`alacritty.toml`](alacritty/.config/alacritty/alacritty.toml) | Catppuccin Frappé, blur, 95% opacity, JetBrains Mono Nerd Font |
 | 📊 | **[btop](https://github.com/aristocratos/btop)** | [`btop.conf`](btop/.config/btop/btop.conf) | system monitor |
 | 🖱️ | **[LinearMouse](https://linearmouse.app)** | [`linearmouse.json`](linearmouse/.config/linearmouse/linearmouse.json) | mouse & trackpad tweaks (macOS) |
+| 🤖 | **[Claude Code](https://code.claude.com)** | [`claude/themes/`](claude/themes/) | 7 custom themes: Catppuccin Frappé & Mocha, Tokyo Night, Kanagawa, Gruvbox, Rosé Pine, Dracula. Pick one with `/theme` |
 | 📝 | **VS Code** | [`vscode/settings.json`](vscode/settings.json) | One Dark Pro Night Flat, Material Icons, Fira Code, no minimap |
 | 🍺 | **Homebrew** | [`Brewfile`](Brewfile) | every CLI tool, app, font, and VS Code extension I use |
 | 🖼️ | **Wallpapers** | [`wallpapers/`](wallpapers/) | with credits |
@@ -71,6 +72,7 @@ dotfiles/
 ├── alacritty/.config/...      ← terminal
 ├── btop/.config/...           ← system monitor
 ├── linearmouse/.config/...    ← mouse (macOS)
+├── claude/themes/             ← Claude Code themes
 ├── vscode/                    ← editor settings
 ├── wallpapers/                ← backgrounds + credits
 └── linux/                     ← Linux-specific setup (soon)

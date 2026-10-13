@@ -1,23 +1,37 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-  "logo": { "padding": { "top": 1, "right": 3 }, "color": { "1": "magenta", "2": "blue" } },
-  "display": { "separator": "  ", "color": { "keys": "magenta", "title": "blue" } },
+  "logo": {
+    "type": "kitty-direct",
+    "source": "~/.config/fastfetch/claude.png",
+    "width": 26,
+    "height": 13,
+    "padding": { "top": 1, "left": 2, "right": 4 }
+  },
+  "display": {
+    "separator": "  ",
+    "color": { "keys": "38;2;202;158;230", "output": "38;2;198;208;245", "title": "38;2;217;119;87" },
+    "key": { "width": 11 }
+  },
   "modules": [
-    "title",
-    { "type": "separator", "string": "─" },
-    { "type": "os", "key": " OS" },
-    { "type": "kernel", "key": " Kernel" },
-    { "type": "uptime", "key": "󰅐 Uptime" },
-    { "type": "packages", "key": "󰏖 Pkgs" },
-    { "type": "shell", "key": " Shell" },
-    { "type": "de", "key": " DE" },
-    { "type": "terminal", "key": " Term" },
-    { "type": "font", "key": " Font" },
-    { "type": "cpu", "key": "󰍛 CPU" },
-    { "type": "gpu", "key": "󰢮 GPU" },
-    { "type": "memory", "key": "󰘚 RAM" },
-    { "type": "disk", "key": "󰋊 Disk" },
+    { "type": "title", "format": "{user-name-colored}{at-symbol-colored}{host-name-colored}" },
+    { "type": "custom", "format": "╭─ System", "outputColor": "38;2;217;119;87" },
+    { "type": "os",       "key": "│  OS" },
+    { "type": "kernel",   "key": "│  Kernel" },
+    { "type": "de",       "key": "│  DE" },
+    { "type": "shell",    "key": "│  Shell" },
+    { "type": "terminal", "key": "│  Term" },
+    { "type": "uptime",   "key": "│  Uptime" },
+    { "type": "packages", "key": "│  Pkgs" },
+    { "type": "custom", "format": "├─ Hardware", "outputColor": "38;2;217;119;87" },
+    { "type": "cpu",    "key": "│  CPU", "format": "{name} ({cores-logical})" },
+    { "type": "gpu",    "key": "│  GPU", "format": "{name}" },
+    { "type": "memory", "key": "│  RAM", "format": "{used} / {total} ({percentage})" },
+    { "type": "disk",   "key": "│  Disk", "folders": "/", "format": "{size-used} / {size-total} ({size-percentage})" },
+    { "type": "custom", "format": "╰─ Style", "outputColor": "38;2;217;119;87" },
+    { "type": "theme", "key": "   Theme" },
+    { "type": "icons", "key": "   Icons" },
+    { "type": "font",  "key": "   Font" },
     "break",
-    { "type": "colors", "symbol": "circle" }
+    { "type": "colors", "symbol": "circle", "paddingLeft": 0 }
   ]
 }

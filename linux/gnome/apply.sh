@@ -43,6 +43,7 @@ nautilus -q 2>/dev/null || true
 
 mkdir -p "$HOME/.config/fastfetch"
 ln -sfn "$DIR/../fastfetch/.config/fastfetch/config.jsonc" "$HOME/.config/fastfetch/config.jsonc"
+ln -sfn "$DIR/../fastfetch/.config/fastfetch/claude.png" "$HOME/.config/fastfetch/claude.png"
 
 gnome-extensions enable blur-my-shell@aunetx 2>/dev/null || say "Install the 'Blur my Shell' extension, then re-run"
 # Purple Papirus folders (optional): get https://github.com/PapirusDevelopmentTeam/papirus-folders and run:

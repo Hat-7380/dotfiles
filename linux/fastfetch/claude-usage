@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+"""Print Claude Code token usage from local transcripts (~/.claude/projects).
+Counts fresh tokens = input + output + cache-creation (cache reads excluded).
+Usage: claude-usage            -> "today 84K · week 1.2M · all 3.4M"
+"""
+import json, glob, os
+from datetime import datetime, timedelta, timezone
+
+def fmt(n):
+    for lim, suf in ((1e9, "B"), (1e6, "M"), (1e3, "K")):
+        if n >= lim:
+            return f"{n/lim:.1f}{suf}".replace(".0", "")
+    return str(int(n))
+
+seen = {}
+root = os.path.expanduser("~/.claude/projects")
+for path in glob.glob(os.path.join(root, "**", "*.jsonl"), recursive=True):
+    try:
+        f = open(path, encoding="utf-8", errors="ignore")
+    except OSError:
+        continue
+    with f:
+        for line in f:
+            if '"usage"' not in line:
+                continue
+            try:
+                o = json.loads(line)
+            except ValueError:
+                continue
+            m = o.get("message")
+            if not isinstance(m, dict) or not isinstance(m.get("usage"), dict):
+                continue
+            u, ts = m["usage"], o.get("timestamp")
+            if not ts:
+                continue
+            key = m.get("id") or o.get("requestId") or (path, ts)
+            tot = (u.get("input_tokens") or 0) + (u.get("output_tokens") or 0) \
+                + (u.get("cache_creation_input_tokens") or 0)
+            seen[key] = (ts, tot)          # repeated blocks: keep one per message
+
+now = datetime.now().astimezone()
+today = now.replace(hour=0, minute=0, second=0, microsecond=0)
+week = today - timedelta(days=6)
+t = w = a = 0
+for ts, tot in seen.values():
+    try:
+        d = datetime.fromisoformat(ts.replace("Z", "+00:00")).astimezone()
+    except ValueError:
+        continue
+    a += tot
+    if d >= week: w += tot
+    if d >= today: t += tot
+print(f"today {fmt(t)} · week {fmt(w)} · all {fmt(a)}")

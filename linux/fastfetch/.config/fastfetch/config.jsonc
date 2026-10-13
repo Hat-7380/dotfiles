@@ -15,7 +15,7 @@
     { "type": "kernel", "key": "KER ", "keyColor": "38;2;239;159;118" },
     { "type": "shell",  "key": "SH  ", "keyColor": "38;2;229;200;144" },
     { "type": "memory", "key": "MEM ", "keyColor": "38;2;140;170;238" },
-    { "type": "uptime", "key": "UP  ", "keyColor": "38;2;202;158;230" },
+    { "type": "command", "key": "CLD ", "keyColor": "38;2;217;119;87", "text": "claude-usage" },
     "break"
   ]
 }

@@ -8,6 +8,7 @@ My Fedora setup: **kitty** + Catppuccin Frappé + JetBrainsMono Nerd Font, **zsh
 | zsh + [zinit](https://github.com/zdharma-continuum/zinit): syntax highlighting, completions, autosuggestions, fzf-tab | [`zsh/.zshrc`](zsh/.zshrc) |
 | [oh-my-posh](https://ohmyposh.dev) `zen` prompt | [`ohmyposh/`](ohmyposh/.config/ohmyposh/zen.toml) |
 | `fzf` + `zoxide` | loaded in `.zshrc` |
+| CLI tools: `eza`, `bat`, `fd`, `ripgrep`, `btop`, `lazygit`, `git-delta`, `tealdeer`, `neovim`, `tmux` | installed by `install.sh`; aliases (`ls`, `ll`, `la`, `lt`, `lg`, `top`, `cat`) in `.zshrc` |
 
 ## Install
 

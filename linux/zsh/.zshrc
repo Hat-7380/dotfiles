@@ -67,6 +67,18 @@ alias ls='ls --color'
 command -v nvim >/dev/null && alias vim='nvim'
 alias c='clear'
 
+# Modern CLI replacements (only if installed)
+if command -v eza >/dev/null; then
+  alias ls='eza --icons --group-directories-first'
+  alias ll='eza -l --icons --git --group-directories-first'
+  alias la='eza -la --icons --git --group-directories-first'
+  alias lt='eza --tree --level=2 --icons'
+fi
+command -v bat >/dev/null && alias cat='bat --paging=never'
+command -v lazygit >/dev/null && alias lg='lazygit'
+command -v btop >/dev/null && alias top='btop'
+command -v fdfind >/dev/null && ! command -v fd >/dev/null && alias fd='fdfind'
+
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"

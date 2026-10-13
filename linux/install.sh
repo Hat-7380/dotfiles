@@ -10,10 +10,10 @@ say() { printf '\033[1;35m==>\033[0m %s\n' "$*"; }
 
 # ── 1. Packages ──────────────────────────────────────
 say "Installing packages (kitty zsh git fzf zoxide curl unzip)"
-if   command -v dnf    >/dev/null; then sudo dnf install -y kitty zsh git fzf zoxide curl unzip fontconfig
-elif command -v apt    >/dev/null; then sudo apt update && sudo apt install -y kitty zsh git fzf zoxide curl unzip fontconfig
-elif command -v pacman >/dev/null; then sudo pacman -S --needed --noconfirm kitty zsh git fzf zoxide curl unzip fontconfig
-elif command -v brew   >/dev/null; then brew install --cask kitty; brew install zsh git fzf zoxide curl
+if   command -v dnf    >/dev/null; then sudo dnf install -y kitty zsh git fzf zoxide curl unzip fontconfig eza fd-find btop git-delta tealdeer neovim bat ripgrep tmux
+elif command -v apt    >/dev/null; then sudo apt update && sudo apt install -y kitty zsh git fzf zoxide curl unzip fontconfig fd-find btop git-delta neovim bat ripgrep tmux
+elif command -v pacman >/dev/null; then sudo pacman -S --needed --noconfirm kitty zsh git fzf zoxide curl unzip fontconfig eza fd btop git-delta tealdeer neovim bat ripgrep tmux lazygit
+elif command -v brew   >/dev/null; then brew install --cask kitty; brew install zsh git fzf zoxide curl eza fd btop git-delta tealdeer neovim bat ripgrep tmux lazygit
 else echo "Unsupported package manager: install kitty zsh git fzf zoxide manually, then re-run."; exit 1; fi
 
 # ── 2. oh-my-posh ────────────────────────────────────
@@ -21,6 +21,18 @@ if ! command -v oh-my-posh >/dev/null; then
   say "Installing oh-my-posh to ~/.local/bin"
   mkdir -p "$HOME/.local/bin"
   curl -s https://ohmyposh.dev/install.sh | bash -s -- -d "$HOME/.local/bin"
+fi
+
+# ── 2b. lazygit (not in Fedora/Debian repos) ────────
+if ! command -v lazygit >/dev/null; then
+  say "Installing lazygit to ~/.local/bin"
+  tmp="$(mktemp -d)"
+  url="$(curl -s https://api.github.com/repos/jesseduffield/lazygit/releases/latest | grep -o 'https://[^"]*linux_x86_64.tar.gz' | head -1)"
+  if [ -n "$url" ]; then
+    curl -fsSL -o "$tmp/lg.tgz" "$url" && tar -xzf "$tmp/lg.tgz" -C "$tmp" lazygit \
+      && install -m755 "$tmp/lazygit" "$HOME/.local/bin/lazygit"
+  fi
+  rm -rf "$tmp"
 fi
 
 # ── 3. JetBrainsMono Nerd Font ───────────────────────

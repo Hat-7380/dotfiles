@@ -22,6 +22,14 @@ Works on Fedora (dnf), Debian/Ubuntu (apt), Arch (pacman) and macOS (brew). It i
 
 > This uses `linux/zsh/.zshrc`, not the macOS Powerlevel10k one in `zsh/`. Don't run the top-level `install.sh` on top of it.
 
+## Dev tools (optional)
+
+```bash
+./dev-setup.sh
+```
+
+Installs Python (pip, pipx, [uv](https://docs.astral.sh/uv/)), Go, Rust (rustup), gcc/make/cmake and VS Code. The prompt shows the Python, Node, Go and Rust version when you're inside a matching project.
+
 ## Shortcuts
 
 | Keys | Action |

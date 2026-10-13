@@ -33,7 +33,7 @@ autoload -Uz compinit && compinit
 zinit cdreplay -q
 
 # Prompt: oh-my-posh (config in ~/.config/ohmyposh/zen.toml)
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 
 # Keybindings

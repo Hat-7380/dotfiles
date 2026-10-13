@@ -10,6 +10,13 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   newline = true
 
   [[blocks.segments]]
+    type = 'session'
+    style = 'plain'
+    foreground = '#E78284'
+    background = 'transparent'
+    template = '{{ if .SSHSession }} {{ .UserName }}@{{ .HostName }} {{ else if .Root }} root {{ end }}'
+
+  [[blocks.segments]]
     type = 'path'
     style = 'plain'
     background = 'transparent'
@@ -34,6 +41,34 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
 [[blocks]]
   type = 'rprompt'
   overflow = 'hidden'
+
+  [[blocks.segments]]
+    type = 'python'
+    style = 'plain'
+    foreground = '#E5C890'
+    background = 'transparent'
+    template = ' {{ if .Venv }}{{ .Venv }} {{ end }}{{ .Major }}.{{ .Minor }} '
+
+  [[blocks.segments]]
+    type = 'node'
+    style = 'plain'
+    foreground = '#A6D189'
+    background = 'transparent'
+    template = ' {{ .Major }}.{{ .Minor }} '
+
+  [[blocks.segments]]
+    type = 'go'
+    style = 'plain'
+    foreground = '#81C8BE'
+    background = 'transparent'
+    template = ' {{ .Major }}.{{ .Minor }} '
+
+  [[blocks.segments]]
+    type = 'rust'
+    style = 'plain'
+    foreground = '#EF9F76'
+    background = 'transparent'
+    template = ' {{ .Major }}.{{ .Minor }} '
 
   [[blocks.segments]]
     type = 'executiontime'

@@ -2,9 +2,7 @@
 
 # ⚙️ dotfiles
 
-**Customizing my workflow until it feels perfect.**<br>
-My terminal, my environment and the other tools I use on Linux and macOS.<br>
-Easy to copy and try.
+**Customizing my workflow until it feels perfect.**
 
 **Linux** &nbsp;·&nbsp; [Fedora](https://fedoraproject.org) · [GNOME](https://www.gnome.org) · [kitty](https://sw.kovidgoyal.net/kitty/) · [zsh](https://www.zsh.org) · [oh-my-posh](https://ohmyposh.dev) · [fastfetch](https://github.com/fastfetch-cli/fastfetch)<br>
 **macOS** &nbsp;·&nbsp; [Alacritty](https://alacritty.org) · [Oh My Zsh](https://ohmyz.sh) · [Powerlevel10k](https://github.com/romkatv/powerlevel10k) · [Homebrew](https://brew.sh)<br>
@@ -14,9 +12,13 @@ Easy to copy and try.
 
 ---
 
-## 🚀 Quick start
+## 👋 About
 
-Take what you like. Nothing gets deleted.
+This repo is my customization and the workflow I'm slowly perfecting: the terminal, the shell, the prompt, the desktop and the small tools around them. It is never finished. I keep changing things, and whatever I like ends up here.
+
+It is made to be borrowed. Every setup is a few plain config files plus an installer, so you can copy one piece or the whole thing. It is quick to try, and nothing is deleted when you do.
+
+## 🚀 Quick start
 
 ```bash
 git clone https://github.com/Hat-7380/dotfiles.git ~/dotfiles

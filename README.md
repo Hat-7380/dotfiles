@@ -14,9 +14,52 @@
 
 ## 👋 About
 
-This repo is my customization and the workflow I'm slowly perfecting: the terminal, the shell, the prompt, the desktop and the small tools around them. It is never finished. I keep changing things, and whatever I like ends up here.
+My customization and the workflow I'm still perfecting. It is never finished: I keep changing things, and whatever I like ends up here. Everything is a few plain config files plus an installer, so you can copy one piece or the whole thing.
 
-It is made to be borrowed. Every setup is a few plain config files plus an installer, so you can copy one piece or the whole thing. It is quick to try, and nothing is deleted when you do.
+<table>
+  <tr>
+    <td align="center" width="33%"><img src="docs/images/linux-desktop.svg" alt="Linux desktop"><br><sub>Linux desktop</sub></td>
+    <td align="center" width="33%"><img src="docs/images/linux-terminal.svg" alt="Linux terminal"><br><sub>Linux terminal</sub></td>
+    <td align="center" width="33%"><img src="docs/images/macos-terminal.svg" alt="macOS terminal"><br><sub>macOS terminal</sub></td>
+  </tr>
+</table>
+
+### One look everywhere
+
+Most of the setup shares one color theme, **Catppuccin Frappé**, in the same font, **JetBrainsMono Nerd Font**: the terminals, the Linux desktop and Claude Code. Switching between my two machines feels the same.
+
+### What's inside
+
+Every part of the setup, by layer. Empty means I don't use one on that system.
+
+| Layer | 🐧 Linux | 🍎 macOS | 🧩 Both |
+|-------|----------|----------|---------|
+| **Desktop** | [GNOME theme](linux/gnome/): Catppuccin Frappé, Papirus icons, Blur my Shell | | [wallpapers](wallpapers/) |
+| **Terminal** | [kitty](linux/kitty/) | [Alacritty](macos/alacritty/) | |
+| **Shell** | [zsh + zinit](linux/zsh/) | [zsh + Oh My Zsh](macos/zsh/) | [bash fallback](shared/bash/) |
+| **Prompt** | [oh-my-posh](linux/ohmyposh/) | [Powerlevel10k](macos/zsh/.p10k.zsh) | |
+| **CLI tools** | eza, bat, fd, ripgrep, fzf, zoxide, lazygit, delta, neovim, tmux | lsd, eza, bat, fd, fzf, lazygit, delta, gh | [btop](shared/btop/) |
+| **System info** | [fastfetch](linux/fastfetch/) with Claude Code token usage | fastfetch | |
+| **Editor** | VS Code | VS Code | [settings](shared/vscode/) |
+| **Claude Code** | | | [7 themes](shared/claude-themes/) |
+| **Mouse** | | [LinearMouse](macos/linearmouse/) | |
+| **Apps** | | [Homebrew Brewfile](macos/Brewfile) | |
+| **Installer** | [linux/install.sh](linux/install.sh) | [macos/install.sh](macos/install.sh) | [install.sh](install.sh) |
+
+### How it fits together
+
+```mermaid
+flowchart LR
+  A[install.sh] --> B[shared configs]
+  A --> C{your system}
+  C -->|Linux| D[linux/install.sh]
+  C -->|macOS| E[macos/install.sh]
+  B & D & E --> F[symlinks in your home folder]
+```
+
+One command links everything into your home folder. Your old files are backed up first, and nothing is deleted.
+
+Details for each system are further down: [Linux](#-linux), [macOS](#-macos) and [Shared](#-shared).
 
 ## 🚀 Quick start
 

@@ -6,27 +6,17 @@
 My terminal, my environment and the other tools I use on Linux and macOS.<br>
 Easy to copy and try.
 
-<img src="https://img.shields.io/badge/Fedora-51A2DA?style=for-the-badge&logo=fedora&logoColor=white" />
-<img src="https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white" />
-<img src="https://img.shields.io/badge/zsh-F15A24?style=for-the-badge&logo=zsh&logoColor=white" />
-<img src="https://img.shields.io/badge/kitty-784DC5?style=for-the-badge" />
-<img src="https://img.shields.io/badge/Catppuccin-D97757?style=for-the-badge" />
-
-<br><br>
-
-**[🐧 Linux](#-linux)** · **[🍎 macOS](#-macos)** · **[🧩 Shared](#-shared)** · **[🖼️ Wallpapers](#️-wallpapers)** · **[⌨️ Shortcuts](docs/SHORTCUTS.md)** · **[📁 Structure](#-structure)**
+<b>Linux</b> &nbsp;<a href="https://fedoraproject.org"><img alt="Fedora" src="https://img.shields.io/badge/Fedora-414559?style=flat-square&logo=fedora&logoColor=ca9ee6"></a> <a href="https://www.gnome.org"><img alt="GNOME" src="https://img.shields.io/badge/GNOME-414559?style=flat-square&logo=gnome&logoColor=ca9ee6"></a> <a href="https://sw.kovidgoyal.net/kitty/"><img alt="kitty" src="https://img.shields.io/badge/kitty-414559?style=flat-square&logo=kitty&logoColor=ca9ee6"></a> <a href="https://www.zsh.org"><img alt="zsh" src="https://img.shields.io/badge/zsh-414559?style=flat-square&logo=zsh&logoColor=ca9ee6"></a> <a href="https://ohmyposh.dev"><img alt="oh-my-posh" src="https://img.shields.io/badge/oh-my-posh-414559?style=flat-square&logo=ohmyposh&logoColor=ca9ee6"></a> <a href="https://github.com/fastfetch-cli/fastfetch"><img alt="fastfetch" src="https://img.shields.io/badge/fastfetch-414559?style=flat-square&logo=gnubash&logoColor=ca9ee6"></a><br>
+<b>macOS</b> &nbsp;<a href="https://alacritty.org"><img alt="Alacritty" src="https://img.shields.io/badge/Alacritty-414559?style=flat-square&logo=alacritty&logoColor=ca9ee6"></a> <a href="https://ohmyz.sh"><img alt="Oh My Zsh" src="https://img.shields.io/badge/Oh%20My%20Zsh-414559?style=flat-square&logo=ohmyzsh&logoColor=ca9ee6"></a> <a href="https://github.com/romkatv/powerlevel10k"><img alt="Powerlevel10k" src="https://img.shields.io/badge/Powerlevel10k-414559?style=flat-square&logo=zsh&logoColor=ca9ee6"></a> <a href="https://brew.sh"><img alt="Homebrew" src="https://img.shields.io/badge/Homebrew-414559?style=flat-square&logo=homebrew&logoColor=ca9ee6"></a><br>
+<b>Theme</b> &nbsp;<a href="https://catppuccin.com"><img alt="Catppuccin" src="https://img.shields.io/badge/Catppuccin-414559?style=flat-square&logo=catppuccin&logoColor=ca9ee6"></a>
 
 </div>
 
 ---
 
-## 👋 About
-
-This repo is my customization and the workflow I'm slowly perfecting: the terminal, the shell, the prompt, the desktop and the small tools around them. It is never finished. I keep changing things, and whatever I like ends up here.
-
-It is made to be borrowed. Every setup is a few plain config files plus an installer, so you can copy one piece or the whole thing. It is quick to try, and nothing is deleted when you do.
-
 ## 🚀 Quick start
+
+Take what you like. Nothing gets deleted.
 
 ```bash
 git clone https://github.com/Hat-7380/dotfiles.git ~/dotfiles

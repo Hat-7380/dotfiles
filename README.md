@@ -6,9 +6,9 @@
 My terminal, my environment and the other tools I use on Linux and macOS.<br>
 Easy to copy and try.
 
-<b>Linux</b> &nbsp;<a href="https://fedoraproject.org"><img alt="Fedora" src="https://img.shields.io/badge/Fedora-414559?style=flat-square&logo=fedora&logoColor=ca9ee6"></a> <a href="https://www.gnome.org"><img alt="GNOME" src="https://img.shields.io/badge/GNOME-414559?style=flat-square&logo=gnome&logoColor=ca9ee6"></a> <a href="https://sw.kovidgoyal.net/kitty/"><img alt="kitty" src="https://img.shields.io/badge/kitty-414559?style=flat-square&logo=kitty&logoColor=ca9ee6"></a> <a href="https://www.zsh.org"><img alt="zsh" src="https://img.shields.io/badge/zsh-414559?style=flat-square&logo=zsh&logoColor=ca9ee6"></a> <a href="https://ohmyposh.dev"><img alt="oh-my-posh" src="https://img.shields.io/badge/oh-my-posh-414559?style=flat-square&logo=ohmyposh&logoColor=ca9ee6"></a> <a href="https://github.com/fastfetch-cli/fastfetch"><img alt="fastfetch" src="https://img.shields.io/badge/fastfetch-414559?style=flat-square&logo=gnubash&logoColor=ca9ee6"></a><br>
-<b>macOS</b> &nbsp;<a href="https://alacritty.org"><img alt="Alacritty" src="https://img.shields.io/badge/Alacritty-414559?style=flat-square&logo=alacritty&logoColor=ca9ee6"></a> <a href="https://ohmyz.sh"><img alt="Oh My Zsh" src="https://img.shields.io/badge/Oh%20My%20Zsh-414559?style=flat-square&logo=ohmyzsh&logoColor=ca9ee6"></a> <a href="https://github.com/romkatv/powerlevel10k"><img alt="Powerlevel10k" src="https://img.shields.io/badge/Powerlevel10k-414559?style=flat-square&logo=zsh&logoColor=ca9ee6"></a> <a href="https://brew.sh"><img alt="Homebrew" src="https://img.shields.io/badge/Homebrew-414559?style=flat-square&logo=homebrew&logoColor=ca9ee6"></a><br>
-<b>Theme</b> &nbsp;<a href="https://catppuccin.com"><img alt="Catppuccin" src="https://img.shields.io/badge/Catppuccin-414559?style=flat-square&logo=catppuccin&logoColor=ca9ee6"></a>
+**Linux** &nbsp;·&nbsp; [Fedora](https://fedoraproject.org) · [GNOME](https://www.gnome.org) · [kitty](https://sw.kovidgoyal.net/kitty/) · [zsh](https://www.zsh.org) · [oh-my-posh](https://ohmyposh.dev) · [fastfetch](https://github.com/fastfetch-cli/fastfetch)<br>
+**macOS** &nbsp;·&nbsp; [Alacritty](https://alacritty.org) · [Oh My Zsh](https://ohmyz.sh) · [Powerlevel10k](https://github.com/romkatv/powerlevel10k) · [Homebrew](https://brew.sh)<br>
+**Theme** &nbsp;·&nbsp; [Catppuccin](https://catppuccin.com)
 
 </div>
 

@@ -20,7 +20,7 @@ cd ~/dotfiles/linux
 
 Works on Fedora (dnf), Debian/Ubuntu (apt), Arch (pacman) and macOS (brew). It installs the packages, oh-my-posh and the Nerd Font, then symlinks the configs. Anything it replaces is backed up as `<file>.bak-<timestamp>`, so it is safe to re-run. Open a new kitty window afterwards; the first launch downloads the zsh plugins.
 
-> This uses `linux/zsh/.zshrc`, not the macOS Powerlevel10k one in `zsh/`. Don't run the top-level `install.sh` on top of it.
+> This uses `linux/zsh/.zshrc`, not the macOS Powerlevel10k one in `macos/zsh/`. Use `./install.sh` from the repo root; it picks the Linux installer for you, so you do not need to run this one by hand.
 
 ## Dev tools (optional)
 

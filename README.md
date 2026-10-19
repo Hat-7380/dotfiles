@@ -2,85 +2,178 @@
 
 # ⚙️ dotfiles
 
-**My terminal, editor, and desktop setup: everything I need to feel at home on a new machine.**
+**Customizing my workflow until it feels perfect.**<br>
+My terminal, my environment and the other tools I use on Linux and macOS.<br>
+Easy to copy and try.
 
+<img src="https://img.shields.io/badge/Fedora-51A2DA?style=for-the-badge&logo=fedora&logoColor=white" />
 <img src="https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white" />
-<img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
 <img src="https://img.shields.io/badge/zsh-F15A24?style=for-the-badge&logo=zsh&logoColor=white" />
-<img src="https://img.shields.io/badge/Alacritty-F46D01?style=for-the-badge&logo=alacritty&logoColor=white" />
+<img src="https://img.shields.io/badge/kitty-784DC5?style=for-the-badge" />
 <img src="https://img.shields.io/badge/Catppuccin-D97757?style=for-the-badge" />
+
+<br><br>
+
+**[🐧 Linux](#-linux)** · **[🍎 macOS](#-macos)** · **[🧩 Shared](#-shared)** · **[🖼️ Wallpapers](#️-wallpapers)** · **[⌨️ Shortcuts](docs/SHORTCUTS.md)** · **[📁 Structure](#-structure)**
 
 </div>
 
 ---
 
-## 🧰 What's inside
+## 👋 About
 
-| | Tool | Config | Notes |
-|---|------|--------|-------|
-| 🐚 | **zsh** + [Oh My Zsh](https://ohmyz.sh) | [`macos/zsh/.zshrc`](macos/zsh/.zshrc) | autosuggestions, syntax highlighting, `z`, `sudo`, web-search |
-| 💲 | **[Powerlevel10k](https://github.com/romkatv/powerlevel10k)** | [`macos/zsh/.p10k.zsh`](macos/zsh/.p10k.zsh) | the prompt; run `p10k configure` to restyle |
-| 🖥️ | **[Alacritty](https://alacritty.org)** | [`alacritty.toml`](macos/alacritty/.config/alacritty/alacritty.toml) | Catppuccin Frappé, blur, 95% opacity, JetBrains Mono Nerd Font |
-| 📊 | **[btop](https://github.com/aristocratos/btop)** | [`btop.conf`](shared/btop/.config/btop/btop.conf) | system monitor |
-| 🖱️ | **[LinearMouse](https://linearmouse.app)** | [`linearmouse.json`](macos/linearmouse/.config/linearmouse/linearmouse.json) | mouse & trackpad tweaks (macOS) |
-| 🤖 | **[Claude Code](https://code.claude.com)** | [`shared/claude-themes/`](shared/claude-themes/) | 7 custom themes: Catppuccin Frappé & Mocha, Tokyo Night, Kanagawa, Gruvbox, Rosé Pine, Dracula. Pick one with `/theme` |
-| 📝 | **VS Code** | [`shared/vscode/settings.json`](shared/vscode/settings.json) | One Dark Pro Night Flat, Material Icons, Fira Code, no minimap |
-| 🍺 | **Homebrew** | [`Brewfile`](macos/Brewfile) | every CLI tool, app, font, and VS Code extension I use |
-| 🖼️ | **Wallpapers** | [`wallpapers/`](wallpapers/) | with credits |
-| ⌨️ | **Shortcuts** | [`SHORTCUTS.md`](docs/SHORTCUTS.md) | all my keys and aliases on one page |
-| 🐧 | **Linux** | [`linux/`](linux/) | kitty + zsh + oh-my-posh, with its own installer |
+This repo is my customization and the workflow I'm slowly perfecting: the terminal, the shell, the prompt, the desktop and the small tools around them. It is never finished. I keep changing things, and whatever I like ends up here.
 
-## 🛠️ CLI tools I use
+It is made to be borrowed. Every setup is a few plain config files plus an installer, so you can copy one piece or the whole thing. It is quick to try, and nothing is deleted when you do.
 
-| Tool | Replaces | What for |
-|------|----------|----------|
-| [`lsd`](https://github.com/lsd-rs/lsd) / [`eza`](https://github.com/eza-community/eza) | `ls` | file lists with colors and icons |
-| [`bat`](https://github.com/sharkdp/bat) | `cat` | syntax-highlighted file viewer |
-| [`fd`](https://github.com/sharkdp/fd) | `find` | fast, simple file search |
-| [`fzf`](https://github.com/junegunn/fzf) | — | fuzzy finder for history, files, folders |
-| [`lazygit`](https://github.com/jesseduffield/lazygit) | — | git in a terminal UI |
-| [`git-delta`](https://github.com/dandavison/delta) | `diff` | beautiful git diffs |
-| [`btop`](https://github.com/aristocratos/btop) | `top` | system monitor |
-| [`fastfetch`](https://github.com/fastfetch-cli/fastfetch) | `neofetch` | system info with a logo |
-| [`gh`](https://cli.github.com) | — | GitHub from the terminal |
-
-## 🚀 Install
-
-> ⚠️ Read the scripts before running them on your machine. These are **my** settings, so take what you like.
+## 🚀 Quick start
 
 ```bash
 git clone https://github.com/Hat-7380/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 
 ./install.sh          # link the configs only
-./install.sh --all    # also install Homebrew apps, Oh My Zsh, Powerlevel10k, plugins and themes
+./install.sh --all    # also install apps and shell extras
 ```
 
-**How it works:** `install.sh` creates *symlinks* from your home folder to the files in this repo. Edit `~/.zshrc` and you're really editing `~/dotfiles/macos/zsh/.zshrc`, so changes are ready to commit.
+`install.sh` detects your system and runs the right installer (`macos/` or `linux/`).
 
-**Nothing gets deleted.** Any existing config is moved to `~/.dotfiles-backup/<date>/` before linking.
+- **Symlinks:** your home folder links to the files in this repo. Edit `~/.zshrc` and you are editing the repo, so changes are ready to commit.
+- **Nothing gets deleted:** any existing config is moved to `~/.dotfiles-backup/<date>/` before linking.
+- **Read before you run:** these are *my* settings. Look at the scripts first and take what you like.
+
+---
+
+## 🐧 Linux
+
+My daily setup, on **Fedora** with GNOME. The installer also works on Debian/Ubuntu, Arch and Homebrew.
+
+<p align="center"><img src="docs/images/linux-desktop.svg" alt="Linux desktop" width="820"></p>
+
+| | What | Config | Details |
+|---|------|--------|---------|
+| 🐱 | **[kitty](https://sw.kovidgoyal.net/kitty/)** | [`kitty.conf`](linux/kitty/.config/kitty/kitty.conf) | Catppuccin Frappé, 90% opacity, beam cursor with a trail, round powerline tabs, no window decorations, JetBrainsMono Nerd Font 14 |
+| 🐚 | **zsh** + [zinit](https://github.com/zdharma-continuum/zinit) | [`.zshrc`](linux/zsh/.zshrc) | syntax highlighting, autosuggestions, completions, `fzf-tab`, plus git, sudo, kubectl and aws snippets |
+| 💲 | **[oh-my-posh](https://ohmyposh.dev)** | [`zen.toml`](linux/ohmyposh/.config/ohmyposh/zen.toml) | the minimal `zen` prompt: path and git status, plus user@host over SSH |
+| 🖥️ | **[fastfetch](https://github.com/fastfetch-cli/fastfetch)** | [`config.jsonc`](linux/fastfetch/.config/fastfetch/config.jsonc) | runs when kitty opens; Claude Code mascot logo and your token usage |
+| 🎨 | **GNOME rice** | [`gnome/`](linux/gnome/) | Catppuccin Frappé for the whole desktop (see below) |
+| 🧰 | **CLI tools** | [`install.sh`](linux/install.sh) | `eza`, `bat`, `fd`, `ripgrep`, `fzf`, `zoxide`, `btop`, `lazygit`, `git-delta`, `tealdeer`, `neovim`, `tmux` |
+| 💻 | **Dev tools** (optional) | [`dev-setup.sh`](linux/dev-setup.sh) | Python (pip, pipx, uv), Go, Rust, gcc/make/cmake, VS Code with settings and extensions |
+
+<p align="center"><img src="docs/images/linux-terminal.svg" alt="Linux terminal" width="820"></p>
+
+### Terminal and shell
+
+- **kitty** opens at 100×25, has 10,000 lines of scrollback and copies whatever you select to the clipboard.
+- **Opacity and font on the fly:** <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd> / <kbd>P</kbd> change opacity, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>=</kbd> / <kbd>-</kbd> change font size, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Backspace</kbd> resets it.
+- **History:** 5,000 entries shared between sessions, no duplicates. <kbd>Ctrl</kbd>+<kbd>P</kbd> / <kbd>N</kbd> search it by what you already typed.
+- **Aliases:** `ls ll la lt` use `eza` with icons and git status, `cat` is `bat`, `lg` is lazygit, `top` is btop, `vim` is neovim, `c` clears the screen.
+- **`cd` is `zoxide`:** it learns your folders, so `cd proj` jumps straight there.
+
+### fastfetch with Claude Code usage
+
+Opens with every new kitty window. The small `claude-usage` script reads your local Claude Code history and prints `today · week · all` token counts right in the fetch.
+
+<p align="center"><img src="docs/images/linux-fastfetch.svg" alt="fastfetch" width="820"></p>
+
+### GNOME desktop
+
+`linux/gnome/apply.sh` turns a fresh GNOME into this look. It backs up your current settings first to `~/Documents/rice-backup/`.
+
+- Dark mode, **adw-gtk3-dark** theme, **Papirus-Dark** icons and a purple accent
+- GTK3 and GTK4 apps recolored to Catppuccin Frappé ([`gtk.css`](linux/gnome/gtk.css))
+- [Blur my Shell](https://extensions.gnome.org/extensions/3193/blur-my-shell/) extension, hot corners off
+- Nautilus: list view, detailed dates, thumbnails always on, item counts, folders first
+- "Open in Terminal" opens kitty
+
+You need `adw-gtk3-theme` and `papirus-icon-theme` first: `sudo dnf install adw-gtk3-theme papirus-icon-theme`.
+
+### Install
+
+```bash
+cd ~/dotfiles
+./install.sh            # or: cd linux && ./install.sh
+./linux/gnome/apply.sh  # the desktop look (optional, log out and back in after)
+./linux/dev-setup.sh    # dev tools (optional, Fedora)
+```
+
+The installer uses `sudo` for packages, installs oh-my-posh and the JetBrainsMono Nerd Font, links the configs and sets zsh as your shell. More in [`linux/README.md`](linux/README.md).
+
+---
+
+## 🍎 macOS
+
+Terminal-first: **Alacritty**, **zsh** with Oh My Zsh and Powerlevel10k, and Homebrew for everything else.
+
+<p align="center"><img src="docs/images/macos-terminal.svg" alt="macOS terminal" width="820"></p>
+
+| | What | Config | Details |
+|---|------|--------|---------|
+| 🖥️ | **[Alacritty](https://alacritty.org)** | [`alacritty.toml`](macos/alacritty/.config/alacritty/alacritty.toml) | Catppuccin Frappé, blur, 95% opacity, 30px padding, JetBrainsMono Nerd Font 16, block cursor that goes hollow when unfocused |
+| 🐚 | **zsh** + [Oh My Zsh](https://ohmyz.sh) | [`.zshrc`](macos/zsh/.zshrc) | plugins: git, autosuggestions, syntax highlighting, `z`, `sudo`, web-search |
+| 💲 | **[Powerlevel10k](https://github.com/romkatv/powerlevel10k)** | [`.p10k.zsh`](macos/zsh/.p10k.zsh) | the prompt; run `p10k configure` to restyle it |
+| 🖱️ | **[LinearMouse](https://linearmouse.app)** | [`linearmouse.json`](macos/linearmouse/.config/linearmouse/linearmouse.json) | mouse and trackpad tweaks |
+| 🍺 | **Homebrew** | [`Brewfile`](macos/Brewfile) | every CLI tool, app, font and VS Code extension I use |
+
+### Terminal and shell
+
+- **Alacritty:** <kbd>Shift</kbd>+<kbd>Enter</kbd> adds a new line without running the command, <kbd>Option</kbd> works as <kbd>Alt</kbd>, selected text is copied automatically.
+- **Aliases:** `ls l la lla lt` use `lsd` with icons.
+- **fzf** is loaded for fuzzy history, file and folder search.
+- **Local settings:** machine-specific things go in `~/.zshrc.local`, which is loaded if it exists and never committed.
+- **`claude` helper:** typing `claude` from your home folder starts Claude Code in `~/projects/work` instead.
+
+### Install
+
+```bash
+cd ~/dotfiles
+./install.sh --all    # Homebrew apps, Oh My Zsh, Powerlevel10k, plugins and the Alacritty theme
+```
+
+---
+
+## 🧩 Shared
+
+Used on both systems.
+
+| | What | Config | Details |
+|---|------|--------|---------|
+| 📊 | **[btop](https://github.com/aristocratos/btop)** | [`btop.conf`](shared/btop/.config/btop/btop.conf) | system monitor, `top` replacement |
+| 📝 | **VS Code** | [`settings.json`](shared/vscode/settings.json) | One Dark Pro Night Flat, Material icons, JetBrainsMono Nerd Font (Fira Code as fallback), no minimap, compact auto-hiding activity bar |
+| 🤖 | **[Claude Code](https://code.claude.com) themes** | [`claude-themes/`](shared/claude-themes/) | 7 themes: Catppuccin Frappé and Mocha, Tokyo Night, Kanagawa, Gruvbox, Rosé Pine, Dracula. Pick one with `/theme` |
+| 🐚 | **bash** | [`.bashrc`](shared/bash/.bashrc) | a tiny fallback that loads fzf |
+
+## 🖼️ Wallpapers
+
+Wallpapers and their credits live in [`wallpapers/`](wallpapers/).
+
+## ⌨️ Shortcuts
+
+All my keys and aliases on one page: [`docs/SHORTCUTS.md`](docs/SHORTCUTS.md).
+
+---
 
 ## 📁 Structure
 
 ```
 dotfiles/
-├── install.sh          ← one-command setup (picks macOS or Linux for you)
-├── macos/              ← Brewfile, zsh + Powerlevel10k, Alacritty, LinearMouse
-├── linux/              ← kitty, zsh, oh-my-posh, fastfetch, GNOME theme
-├── shared/             ← btop, VS Code, Claude Code themes, bash
-├── wallpapers/         ← backgrounds + credits
-└── docs/               ← SHORTCUTS.md (keys and aliases cheat sheet)
+├── install.sh      picks the macOS or Linux installer for you
+├── macos/          Brewfile, zsh + Powerlevel10k, Alacritty, LinearMouse
+├── linux/          kitty, zsh, oh-my-posh, fastfetch, GNOME
+├── shared/         btop, VS Code, Claude Code themes, bash
+├── wallpapers/     backgrounds and credits
+└── docs/           shortcuts and screenshots
 ```
 
 ## 🔒 Secrets
 
-No passwords, tokens, or keys live in this repo. Machine-specific or private settings go in `~/.zshrc.local`, which `.zshrc` loads automatically and git ignores.
+No passwords, tokens or keys live in this repo. Private or machine-specific settings go in `~/.zshrc.local`, which git ignores.
 
 ## ✏️ Updating
 
 ```bash
 cd ~/dotfiles
-brew bundle dump --force   # refresh Brewfile after installing new apps
+brew bundle dump --force --file=macos/Brewfile   # macOS: refresh the Brewfile
 git add -A && git commit -m "update configs" && git push
 ```
 

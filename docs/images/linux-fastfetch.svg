@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" rx="18" fill="#303446"/>
+  <rect x="2" y="2" width="1196" height="671" rx="17" fill="none" stroke="#51576d" stroke-width="3" stroke-dasharray="14 10"/>
+  <text x="600" y="320" text-anchor="middle" font-family="sans-serif" font-size="40" fill="#c6d0f5">fastfetch with Claude Code usage</text>
+  <text x="600" y="375" text-anchor="middle" font-family="sans-serif" font-size="26" fill="#a5adce">screenshot coming soon</text>
+</svg>

@@ -12,58 +12,54 @@
 
 ---
 
-## 👋 About
+<p align="center">
+  <img src="docs/images/linux-desktop.svg" alt="Linux desktop" width="60%">
+  <img src="docs/images/macos-terminal.svg" alt="macOS terminal" width="38%">
+</p>
 
-My customization and the workflow I'm still perfecting. It is never finished: I keep changing things, and whatever I like ends up here. Everything is a few plain config files, so you can copy one piece or the whole thing.
+<p align="center">
+  <img src="docs/images/palette.svg" alt="Catppuccin Frappé colors" width="260"><br>
+  <sub>Catppuccin Frappé &nbsp;·&nbsp; JetBrainsMono Nerd Font &nbsp;·&nbsp; the same look on every machine</sub>
+</p>
 
-<table>
-  <tr>
-    <td align="center" width="33%"><img src="docs/images/linux-desktop.svg" alt="Linux desktop"><br><sub>Linux desktop</sub></td>
-    <td align="center" width="33%"><img src="docs/images/linux-terminal.svg" alt="Linux terminal"><br><sub>Linux terminal</sub></td>
-    <td align="center" width="33%"><img src="docs/images/macos-terminal.svg" alt="macOS terminal"><br><sub>macOS terminal</sub></td>
-  </tr>
-</table>
+> [!TIP]
+> Every setup is a few plain config files. Copy one piece or the whole thing.
 
-### One look everywhere
+> [!NOTE]
+> This repo is never finished. Whatever I like ends up here.
 
-Most of the setup shares one color theme, **Catppuccin Frappé**, in the same font, **JetBrainsMono Nerd Font**: the terminals, the Linux desktop and Claude Code. Switching between my two machines feels the same.
+## About
 
-### What's inside
+This is the setup I use every day: the terminal, the shell, the prompt and the desktop around them. I didn't write it in one go. I add a piece when something annoys me and keep it when it sticks, so it's never finished, and every part is small enough to copy on its own.
 
-Every part of the setup, by layer. Empty means I don't use one on that system.
+I use one Linux machine on Fedora and one Mac. The goal is that switching between them feels the same: same colors, same font, same habits in the terminal.
 
-| Layer | 🐧 Linux | 🍎 macOS | 🧩 Both |
-|-------|----------|----------|---------|
-| **Desktop** | [GNOME theme](linux/gnome/): Catppuccin Frappé, Papirus icons, Blur my Shell | | [wallpapers](wallpapers/) |
-| **Terminal** | [kitty](linux/kitty/) | [Alacritty](macos/alacritty/) | |
-| **Shell** | [zsh + zinit](linux/zsh/) | [zsh + Oh My Zsh](macos/zsh/) | [bash fallback](shared/bash/) |
-| **Prompt** | [oh-my-posh](linux/ohmyposh/) | [Powerlevel10k](macos/zsh/.p10k.zsh) | |
-| **CLI tools** | eza, bat, fd, ripgrep, fzf, zoxide, lazygit, delta, neovim, tmux | lsd, eza, bat, fd, fzf, lazygit, delta, gh | [btop](shared/btop/) |
-| **System info** | [fastfetch](linux/fastfetch/) with Claude Code token usage | fastfetch | |
-| **Editor** | VS Code | VS Code | [settings](shared/vscode/) |
-| **Claude Code** | | | [7 themes](shared/claude-themes/) |
-| **Mouse** | | [LinearMouse](macos/linearmouse/) | |
-| **Apps** | | [Homebrew Brewfile](macos/Brewfile) | |
+## Linux
 
-Details for each system are further down: [Linux](#-linux), [macOS](#-macos) and [Shared](#-shared).
+Fedora with GNOME is where most of this started. The terminal is the center of it: **kitty** for speed and looks, **zsh** with a few plugins for comfort, and a minimal prompt that only shows the path and git status.
 
-## 🐧 Linux
+<p align="center">
+  <img src="docs/images/linux-terminal.svg" alt="Linux terminal" width="62%">
+  <img src="docs/images/linux-fastfetch.svg" alt="fastfetch" width="36%">
+</p>
 
-My daily setup, on **Fedora** with GNOME.
+<details open>
+<summary><b>All parts</b></summary>
 
-<p align="center"><img src="docs/images/linux-desktop.svg" alt="Linux desktop" width="820"></p>
+| Part | What it does |
+|------|--------------|
+| [kitty](linux/kitty/.config/kitty/kitty.conf) | Terminal. Catppuccin Frappé, 90% opacity, beam cursor with a trail, round powerline tabs, no window decorations, JetBrainsMono Nerd Font 14 |
+| [zsh + zinit](linux/zsh/.zshrc) | Shell. Syntax highlighting, autosuggestions, completions, `fzf-tab`, plus git, sudo, kubectl and aws snippets |
+| [oh-my-posh](linux/ohmyposh/.config/ohmyposh/zen.toml) | Prompt. The minimal `zen` theme: path and git status, plus user@host over SSH |
+| [fastfetch](linux/fastfetch/.config/fastfetch/config.jsonc) | System info when kitty opens, with the Claude Code mascot logo and your token usage |
+| [GNOME](linux/gnome/) | Catppuccin Frappé for the whole desktop |
+| CLI tools | `eza`, `bat`, `fd`, `ripgrep`, `fzf`, `zoxide`, `btop`, `lazygit`, `git-delta`, `tealdeer`, `neovim`, `tmux` |
+| Dev tools | Python (pip, pipx, uv), Go, Rust, gcc/make/cmake, VS Code with settings and extensions |
 
-| | What | Config | Details |
-|---|------|--------|---------|
-| 🐱 | **[kitty](https://sw.kovidgoyal.net/kitty/)** | [`kitty.conf`](linux/kitty/.config/kitty/kitty.conf) | Catppuccin Frappé, 90% opacity, beam cursor with a trail, round powerline tabs, no window decorations, JetBrainsMono Nerd Font 14 |
-| 🐚 | **zsh** + [zinit](https://github.com/zdharma-continuum/zinit) | [`.zshrc`](linux/zsh/.zshrc) | syntax highlighting, autosuggestions, completions, `fzf-tab`, plus git, sudo, kubectl and aws snippets |
-| 💲 | **[oh-my-posh](https://ohmyposh.dev)** | [`zen.toml`](linux/ohmyposh/.config/ohmyposh/zen.toml) | the minimal `zen` prompt: path and git status, plus user@host over SSH |
-| 🖥️ | **[fastfetch](https://github.com/fastfetch-cli/fastfetch)** | [`config.jsonc`](linux/fastfetch/.config/fastfetch/config.jsonc) | runs when kitty opens; Claude Code mascot logo and your token usage |
-| 🎨 | **GNOME rice** | [`gnome/`](linux/gnome/) | Catppuccin Frappé for the whole desktop (see below) |
-| 🧰 | **CLI tools** | |  `eza`, `bat`, `fd`, `ripgrep`, `fzf`, `zoxide`, `btop`, `lazygit`, `git-delta`, `tealdeer`, `neovim`, `tmux` |
-| 💻 | **Dev tools** | |  Python (pip, pipx, uv), Go, Rust, gcc/make/cmake, VS Code with settings and extensions |
+</details>
 
-<p align="center"><img src="docs/images/linux-terminal.svg" alt="Linux terminal" width="820"></p>
+<details>
+<summary><b>Terminal, fastfetch and GNOME details</b></summary>
 
 ### Terminal and shell
 
@@ -77,8 +73,6 @@ My daily setup, on **Fedora** with GNOME.
 
 Opens with every new kitty window. The small `claude-usage` script reads your local Claude Code history and prints `today · week · all` token counts right in the fetch.
 
-<p align="center"><img src="docs/images/linux-fastfetch.svg" alt="fastfetch" width="820"></p>
-
 ### GNOME desktop
 
 The whole desktop in one look:
@@ -89,24 +83,31 @@ The whole desktop in one look:
 - Nautilus: list view, detailed dates, thumbnails always on, item counts, folders first
 - "Open in Terminal" opens kitty
 
+</details>
 
----
+## macOS
 
-## 🍎 macOS
+The Mac follows the same ideas with that system's tools: **Alacritty**, **Oh My Zsh** and **Powerlevel10k**. **Homebrew** installs everything from a single file.
 
-Terminal-first: **Alacritty**, **zsh** with Oh My Zsh and Powerlevel10k, and Homebrew for everything else.
+<p align="center">
+  <img src="docs/images/macos-terminal.svg" alt="macOS terminal" width="62%">
+</p>
 
-<p align="center"><img src="docs/images/macos-terminal.svg" alt="macOS terminal" width="820"></p>
+<details>
+<summary><b>All parts</b></summary>
 
-| | What | Config | Details |
-|---|------|--------|---------|
-| 🖥️ | **[Alacritty](https://alacritty.org)** | [`alacritty.toml`](macos/alacritty/.config/alacritty/alacritty.toml) | Catppuccin Frappé, blur, 95% opacity, 30px padding, JetBrainsMono Nerd Font 16, block cursor that goes hollow when unfocused |
-| 🐚 | **zsh** + [Oh My Zsh](https://ohmyz.sh) | [`.zshrc`](macos/zsh/.zshrc) | plugins: git, autosuggestions, syntax highlighting, `z`, `sudo`, web-search |
-| 💲 | **[Powerlevel10k](https://github.com/romkatv/powerlevel10k)** | [`.p10k.zsh`](macos/zsh/.p10k.zsh) | the prompt; run `p10k configure` to restyle it |
-| 🖱️ | **[LinearMouse](https://linearmouse.app)** | [`linearmouse.json`](macos/linearmouse/.config/linearmouse/linearmouse.json) | mouse and trackpad tweaks |
-| 🍺 | **Homebrew** | [`Brewfile`](macos/Brewfile) | every CLI tool, app, font and VS Code extension I use |
+| Part | What it does |
+|------|--------------|
+| [Alacritty](macos/alacritty/.config/alacritty/alacritty.toml) | Terminal. Catppuccin Frappé, blur, 95% opacity, 30px padding, JetBrainsMono Nerd Font 16, block cursor that goes hollow when unfocused |
+| [zsh + Oh My Zsh](macos/zsh/.zshrc) | Shell. Plugins: git, autosuggestions, syntax highlighting, `z`, `sudo`, web-search |
+| [Powerlevel10k](macos/zsh/.p10k.zsh) | Prompt. Run `p10k configure` to restyle it |
+| [LinearMouse](macos/linearmouse/.config/linearmouse/linearmouse.json) | Mouse and trackpad tweaks |
+| [Homebrew](macos/Brewfile) | Every CLI tool, app, font and VS Code extension I use |
 
-### Terminal and shell
+</details>
+
+<details>
+<summary><b>Terminal and shell details</b></summary>
 
 - **Alacritty:** <kbd>Shift</kbd>+<kbd>Enter</kbd> adds a new line without running the command, <kbd>Option</kbd> works as <kbd>Alt</kbd>, selected text is copied automatically.
 - **Aliases:** `ls l la lla lt` use `lsd` with icons.
@@ -114,18 +115,23 @@ Terminal-first: **Alacritty**, **zsh** with Oh My Zsh and Powerlevel10k, and Hom
 - **Local settings:** machine-specific things go in `~/.zshrc.local`, which is loaded if it exists and never committed.
 - **`claude` helper:** typing `claude` from your home folder starts Claude Code in `~/projects/work` instead.
 
----
+</details>
 
-## 🧩 Shared
+## Shared
 
-Used on both systems.
+The parts that don't care which system they run on: the monitor, the editor settings, the Claude Code themes and the wallpapers.
 
-| | What | Config | Details |
-|---|------|--------|---------|
-| 📊 | **[btop](https://github.com/aristocratos/btop)** | [`btop.conf`](shared/btop/.config/btop/btop.conf) | system monitor, `top` replacement |
-| 📝 | **VS Code** | [`settings.json`](shared/vscode/settings.json) | One Dark Pro Night Flat, Material icons, JetBrainsMono Nerd Font (Fira Code as fallback), no minimap, compact auto-hiding activity bar |
-| 🤖 | **[Claude Code](https://code.claude.com) themes** | [`claude-themes/`](shared/claude-themes/) | 7 themes: Catppuccin Frappé and Mocha, Tokyo Night, Kanagawa, Gruvbox, Rosé Pine, Dracula. Pick one with `/theme` |
-| 🐚 | **bash** | [`.bashrc`](shared/bash/.bashrc) | a tiny fallback that loads fzf |
+<details>
+<summary><b>All parts</b></summary>
+
+| Part | What it does |
+|------|--------------|
+| [btop](shared/btop/.config/btop/btop.conf) | System monitor, a `top` replacement |
+| [VS Code](shared/vscode/settings.json) | One Dark Pro Night Flat, Material icons, JetBrainsMono Nerd Font (Fira Code as fallback), no minimap, compact auto-hiding activity bar |
+| [Claude Code themes](shared/claude-themes/) | 7 themes: Catppuccin Frappé and Mocha, Tokyo Night, Kanagawa, Gruvbox, Rosé Pine, Dracula. Pick one with `/theme` |
+| [bash](shared/bash/.bashrc) | A tiny fallback that loads fzf |
+
+</details>
 
 ## 🖼️ Wallpapers
 

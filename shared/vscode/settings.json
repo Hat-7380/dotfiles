@@ -9,6 +9,5 @@
     "workbench.activityBar.compact": true,
     "workbench.activityBar.autoHide": true,
     "workbench.editor.empty.hint": "hidden",
-    "editor.minimap.enabled": false,
-    "chatgpt.localeOverride": "en-US"
+    "editor.minimap.enabled": false
 }

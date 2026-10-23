@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <img src="docs/images/palette.svg" alt="Catppuccin Frappé colors" width="260"><br>
+  <img src="docs/images/palette.svg" alt="Catppuccin Frappé colors" width="560"><br>
   <sub>Catppuccin Frappé &nbsp;·&nbsp; JetBrainsMono Nerd Font &nbsp;·&nbsp; the same look on every machine</sub>
 </p>
 

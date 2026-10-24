@@ -57,10 +57,10 @@ link() {
   fi
   ln -s "$src" "$dst"; say "Linked $dst"
 }
-link "$DOTS/kitty/.config/kitty/kitty.conf"          "$HOME/.config/kitty/kitty.conf"
-link "$DOTS/kitty/.config/kitty/current-theme.conf"  "$HOME/.config/kitty/current-theme.conf"
-link "$DOTS/ohmyposh/.config/ohmyposh/zen.toml"         "$HOME/.config/ohmyposh/zen.toml"
-link "$DOTS/zsh/.zshrc"                "$HOME/.zshrc"
+link "$DOTS/terminals/kitty/.config/kitty/kitty.conf"          "$HOME/.config/kitty/kitty.conf"
+link "$DOTS/terminals/kitty/.config/kitty/current-theme.conf"  "$HOME/.config/kitty/current-theme.conf"
+link "$DOTS/shell/ohmyposh/.config/ohmyposh/zen.toml"         "$HOME/.config/ohmyposh/zen.toml"
+link "$DOTS/shell/zsh/.zshrc"                "$HOME/.zshrc"
 
 # ── 5. Default shell ─────────────────────────────────
 if [ "${SHELL##*/}" != "zsh" ]; then

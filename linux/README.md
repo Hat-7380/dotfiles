@@ -4,9 +4,9 @@ My Fedora setup: **kitty** + Catppuccin Frappé + JetBrainsMono Nerd Font, **zsh
 
 | Tool | Config |
 |------|--------|
-| kitty (90% opacity, beam cursor with trail, round powerline tabs) | [`kitty/`](kitty/.config/kitty/) |
-| zsh + [zinit](https://github.com/zdharma-continuum/zinit): syntax highlighting, completions, autosuggestions, fzf-tab | [`zsh/.zshrc`](zsh/.zshrc) |
-| [oh-my-posh](https://ohmyposh.dev) `zen` prompt | [`ohmyposh/`](ohmyposh/.config/ohmyposh/zen.toml) |
+| kitty (90% opacity, beam cursor with trail, round powerline tabs) | [`kitty/`](terminals/kitty/.config/kitty/) |
+| zsh + [zinit](https://github.com/zdharma-continuum/zinit): syntax highlighting, completions, autosuggestions, fzf-tab | [`zsh/.zshrc`](shell/zsh/.zshrc) |
+| [oh-my-posh](https://ohmyposh.dev) `zen` prompt | [`ohmyposh/`](shell/ohmyposh/.config/ohmyposh/zen.toml) |
 | `fzf` + `zoxide` | loaded in `.zshrc` |
 | CLI tools: `eza`, `bat`, `fd`, `ripgrep`, `btop`, `lazygit`, `git-delta`, `tealdeer`, `neovim`, `tmux` | installed by `install.sh`; aliases (`ls`, `ll`, `la`, `lt`, `lg`, `top`, `cat`) in `.zshrc` |
 
@@ -20,7 +20,7 @@ cd ~/dotfiles/linux
 
 Works on Fedora (dnf), Debian/Ubuntu (apt), Arch (pacman) and macOS (brew). It installs the packages, oh-my-posh and the Nerd Font, then symlinks the configs. Anything it replaces is backed up as `<file>.bak-<timestamp>`, so it is safe to re-run. Open a new kitty window afterwards; the first launch downloads the zsh plugins.
 
-> This uses `linux/zsh/.zshrc`, not the macOS Powerlevel10k one in `macos/zsh/`. Use `./install.sh` from the repo root; it picks the Linux installer for you, so you do not need to run this one by hand.
+> This uses `linux/shell/zsh/.zshrc`, not the macOS Powerlevel10k one in `macos/terminal/zsh/`. Use `./install.sh` from the repo root; it picks the Linux installer for you, so you do not need to run this one by hand.
 
 ## Dev tools (optional)
 

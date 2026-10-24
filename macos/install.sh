@@ -15,7 +15,7 @@ install_extras() {
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
-  brew bundle --file="$DOTFILES/macos/Brewfile"
+  brew bundle --file="$DOTFILES/macos/apps/Brewfile"
 
   if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
     info "installing Oh My Zsh..."
@@ -31,11 +31,11 @@ install_extras() {
 
 link_configs() {
   bold "🔗 Linking macOS configs"
-  link macos/zsh/.zshrc       "$HOME/.zshrc"
-  link macos/zsh/.zprofile    "$HOME/.zprofile"
-  link macos/zsh/.p10k.zsh    "$HOME/.p10k.zsh"
-  link macos/alacritty/.config/alacritty/alacritty.toml "$HOME/.config/alacritty/alacritty.toml"
-  link macos/linearmouse/.config/linearmouse/linearmouse.json "$HOME/.config/linearmouse/linearmouse.json"
+  link macos/terminal/zsh/.zshrc       "$HOME/.zshrc"
+  link macos/terminal/zsh/.zprofile    "$HOME/.zprofile"
+  link macos/terminal/zsh/.p10k.zsh    "$HOME/.p10k.zsh"
+  link macos/terminal/alacritty/.config/alacritty/alacritty.toml "$HOME/.config/alacritty/alacritty.toml"
+  link macos/apps/linearmouse/.config/linearmouse/linearmouse.json "$HOME/.config/linearmouse/linearmouse.json"
   echo
 }
 

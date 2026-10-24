@@ -42,9 +42,9 @@ gsettings set org.gnome.desktop.default-applications.terminal exec-arg ''
 nautilus -q 2>/dev/null || true
 
 mkdir -p "$HOME/.config/fastfetch" "$HOME/.local/bin"
-ln -sfn "$DIR/../fastfetch/claude-usage" "$HOME/.local/bin/claude-usage"
-ln -sfn "$DIR/../fastfetch/.config/fastfetch/config.jsonc" "$HOME/.config/fastfetch/config.jsonc"
-ln -sfn "$DIR/../fastfetch/.config/fastfetch/clawd.txt" "$HOME/.config/fastfetch/claude.png"
+ln -sfn "$DIR/../shell/fastfetch/claude-usage" "$HOME/.local/bin/claude-usage"
+ln -sfn "$DIR/../shell/fastfetch/.config/fastfetch/config.jsonc" "$HOME/.config/fastfetch/config.jsonc"
+ln -sfn "$DIR/../shell/fastfetch/.config/fastfetch/clawd.txt" "$HOME/.config/fastfetch/claude.png"
 
 gnome-extensions enable blur-my-shell@aunetx 2>/dev/null || say "Install the 'Blur my Shell' extension, then re-run"
 # Purple Papirus folders (optional): get https://github.com/PapirusDevelopmentTeam/papirus-folders and run:

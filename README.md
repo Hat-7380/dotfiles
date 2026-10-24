@@ -14,7 +14,7 @@
 
 <p align="center">
   <img src="docs/images/linux-desktop.svg" alt="Linux desktop" width="60%">
-  <img src="docs/images/macos-terminal.svg" alt="macOS terminal" width="38%">
+  <img src="docs/images/linux-terminal.svg" alt="Linux terminal" width="38%">
 </p>
 
 <p align="center">
@@ -26,21 +26,33 @@
 > Every setup is a few plain config files. Copy one piece or the whole thing.
 
 > [!NOTE]
-> This repo is never finished. Whatever I like ends up here.
+> Linux is the main part of this repo. macOS is small on purpose.
 
 ## About
 
-This is the setup I use every day: the terminal, the shell, the prompt and the desktop around them. I didn't write it in one go. I add a piece when something annoys me and keep it when it sticks, so it's never finished, and every part is small enough to copy on its own.
+This is the setup I use every day. Linux is where I experiment the most: different distros, different desktops and window managers, and every part of them, from the lock screen to the launcher. The Mac is simple: a terminal and the apps I use.
 
-I use one Linux machine on Fedora and one Mac. The goal is that switching between them feels the same: same colors, same font, same habits in the terminal.
+Each part comes with a short reason: why I chose it and how much it matters to me.
 
 ## Linux
 
-Fedora with GNOME is where most of this started. The terminal is the center of it: **kitty** for speed and looks, **zsh** with a few plugins for comfort, and a minimal prompt that only shows the path and git status.
+My main playground. Here is what I've customized, by environment and by part.
+
+| Environment | Main screen | Top bar | Launcher | Lock screen |
+|-------------|:-----------:|:-------:|:--------:|:-----------:|
+| [GNOME](#gnome) | **done** | planned | planned | planned |
+| KDE Plasma | planned | planned | planned | planned |
+| i3 | planned | planned | planned | planned |
+| Hyprland | planned | planned | planned | planned |
+
+<sub>Top bar means the panel or waybar. Launcher means rofi or dmenu. More parts get added as I finish them.</sub>
+
+### GNOME
+
+Catppuccin Frappé on the whole desktop with Papirus icons and Blur my Shell. *Why: it's the desktop I use daily, so it gets the most polish.*
 
 <p align="center">
-  <img src="docs/images/linux-terminal.svg" alt="Linux terminal" width="62%">
-  <img src="docs/images/linux-fastfetch.svg" alt="fastfetch" width="36%">
+  <img src="docs/images/linux-desktop.svg" alt="GNOME desktop" width="62%">
 </p>
 
 <details open>
@@ -48,46 +60,89 @@ Fedora with GNOME is where most of this started. The terminal is the center of i
 
 | Part | What it does |
 |------|--------------|
-| [kitty](linux/kitty/.config/kitty/kitty.conf) | Terminal. Catppuccin Frappé, 90% opacity, beam cursor with a trail, round powerline tabs, no window decorations, JetBrainsMono Nerd Font 14 |
-| [zsh + zinit](linux/zsh/.zshrc) | Shell. Syntax highlighting, autosuggestions, completions, `fzf-tab`, plus git, sudo, kubectl and aws snippets |
-| [oh-my-posh](linux/ohmyposh/.config/ohmyposh/zen.toml) | Prompt. The minimal `zen` theme: path and git status, plus user@host over SSH |
-| [fastfetch](linux/fastfetch/.config/fastfetch/config.jsonc) | System info when kitty opens, with the Claude Code mascot logo and your token usage |
-| [GNOME](linux/gnome/) | Catppuccin Frappé for the whole desktop |
-| CLI tools | `eza`, `bat`, `fd`, `ripgrep`, `fzf`, `zoxide`, `btop`, `lazygit`, `git-delta`, `tealdeer`, `neovim`, `tmux` |
-| Dev tools | Python (pip, pipx, uv), Go, Rust, gcc/make/cmake, VS Code with settings and extensions |
+| [GTK theme](linux/gnome/gtk.css) | Recolors GTK3 and GTK4 apps to Catppuccin Frappé |
+| [Desktop settings](linux/gnome/apply.sh) | Dark mode, **adw-gtk3-dark** theme, **Papirus-Dark** icons, purple accent, hot corners off |
+| [Blur my Shell](https://extensions.gnome.org/extensions/3193/blur-my-shell/) | Blurred panel and overview |
+| Nautilus | List view, detailed dates, thumbnails always on, item counts, folders first, "Open in Terminal" opens kitty |
+
+</details>
+
+### KDE Plasma · i3 · Hyprland
+
+*Planned. These get their own sections as soon as they're ready.*
+
+### Terminals
+
+kitty is set up on Linux. Alacritty is configured on macOS, and its Linux version is planned. *Why: the terminal is where I spend most of my time.*
+
+<p align="center">
+  <img src="docs/images/linux-terminal.svg" alt="Linux terminal" width="62%">
+</p>
+
+<details open>
+<summary><b>All parts</b></summary>
+
+| Part | What it does |
+|------|--------------|
+| [kitty](linux/terminals/kitty/.config/kitty/kitty.conf) | Catppuccin Frappé, 90% opacity, beam cursor with a trail, round powerline tabs, no window decorations, JetBrainsMono Nerd Font 14 |
+| Alacritty | Planned for Linux |
 
 </details>
 
 <details>
-<summary><b>Terminal, fastfetch and GNOME details</b></summary>
+<summary><b>kitty details</b></summary>
 
-### Terminal and shell
-
-- **kitty** opens at 100×25, has 10,000 lines of scrollback and copies whatever you select to the clipboard.
+- Opens at 100×25, has 10,000 lines of scrollback and copies whatever you select to the clipboard.
 - **Opacity and font on the fly:** <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd> / <kbd>P</kbd> change opacity, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>=</kbd> / <kbd>-</kbd> change font size, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Backspace</kbd> resets it.
-- **History:** 5,000 entries shared between sessions, no duplicates. <kbd>Ctrl</kbd>+<kbd>P</kbd> / <kbd>N</kbd> search it by what you already typed.
-- **Aliases:** `ls ll la lt` use `eza` with icons and git status, `cat` is `bat`, `lg` is lazygit, `top` is btop, `vim` is neovim, `c` clears the screen.
-- **`cd` is `zoxide`:** it learns your folders, so `cd proj` jumps straight there.
-
-### fastfetch with Claude Code usage
-
-Opens with every new kitty window. The small `claude-usage` script reads your local Claude Code history and prints `today · week · all` token counts right in the fetch.
-
-### GNOME desktop
-
-The whole desktop in one look:
-
-- Dark mode, **adw-gtk3-dark** theme, **Papirus-Dark** icons and a purple accent
-- GTK3 and GTK4 apps recolored to Catppuccin Frappé ([`gtk.css`](linux/gnome/gtk.css))
-- [Blur my Shell](https://extensions.gnome.org/extensions/3193/blur-my-shell/) extension, hot corners off
-- Nautilus: list view, detailed dates, thumbnails always on, item counts, folders first
-- "Open in Terminal" opens kitty
 
 </details>
 
+### Shell and prompt
+
+zsh with zinit plugins and the minimal oh-my-posh prompt. *Why: fast to start and shows only what I need.*
+
+<p align="center">
+  <img src="docs/images/linux-fastfetch.svg" alt="fastfetch" width="62%">
+</p>
+
+<details open>
+<summary><b>All parts</b></summary>
+
+| Part | What it does |
+|------|--------------|
+| [zsh + zinit](linux/shell/zsh/.zshrc) | Syntax highlighting, autosuggestions, completions, `fzf-tab`, plus git, sudo, kubectl and aws snippets |
+| [oh-my-posh](linux/shell/ohmyposh/.config/ohmyposh/zen.toml) | The minimal `zen` prompt: path and git status, plus user@host over SSH |
+| [fastfetch](linux/shell/fastfetch/.config/fastfetch/config.jsonc) | Runs when kitty opens, with the Claude Code mascot logo and your token usage |
+| CLI tools | `eza`, `bat`, `fd`, `ripgrep`, `fzf`, `zoxide`, `btop`, `lazygit`, `git-delta`, `tealdeer`, `neovim`, `tmux` |
+| [Dev tools](linux/dev-setup.sh) | Python (pip, pipx, uv), Go, Rust, gcc/make/cmake, VS Code with settings and extensions |
+
+</details>
+
+<details>
+<summary><b>Shell details</b></summary>
+
+- **History:** 5,000 entries shared between sessions, no duplicates. <kbd>Ctrl</kbd>+<kbd>P</kbd> / <kbd>N</kbd> search it by what you already typed.
+- **Aliases:** `ls ll la lt` use `eza` with icons and git status, `cat` is `bat`, `lg` is lazygit, `top` is btop, `vim` is neovim, `c` clears the screen.
+- **`cd` is `zoxide`:** it learns your folders, so `cd proj` jumps straight there.
+- **fastfetch:** the small `claude-usage` script reads your local Claude Code history and prints `today · week · all` token counts right in the fetch.
+
+</details>
+
+### Apps
+
+*Planned. The apps I customize on Linux, with their configs.*
+
+### Distros
+
+Fedora today. Other distros get their package lists and notes here.
+
 ## macOS
 
-The Mac follows the same ideas with that system's tools: **Alacritty**, **Oh My Zsh** and **Powerlevel10k**. **Homebrew** installs everything from a single file.
+Just two things: the terminal and the apps I use.
+
+### Terminal and tools
+
+Alacritty with zsh, Oh My Zsh and Powerlevel10k. kitty is coming soon. *Why: same look as Linux, nothing more.*
 
 <p align="center">
   <img src="docs/images/macos-terminal.svg" alt="macOS terminal" width="62%">
@@ -98,28 +153,38 @@ The Mac follows the same ideas with that system's tools: **Alacritty**, **Oh My 
 
 | Part | What it does |
 |------|--------------|
-| [Alacritty](macos/alacritty/.config/alacritty/alacritty.toml) | Terminal. Catppuccin Frappé, blur, 95% opacity, 30px padding, JetBrainsMono Nerd Font 16, block cursor that goes hollow when unfocused |
-| [zsh + Oh My Zsh](macos/zsh/.zshrc) | Shell. Plugins: git, autosuggestions, syntax highlighting, `z`, `sudo`, web-search |
-| [Powerlevel10k](macos/zsh/.p10k.zsh) | Prompt. Run `p10k configure` to restyle it |
-| [LinearMouse](macos/linearmouse/.config/linearmouse/linearmouse.json) | Mouse and trackpad tweaks |
-| [Homebrew](macos/Brewfile) | Every CLI tool, app, font and VS Code extension I use |
-
-</details>
-
-<details>
-<summary><b>Terminal and shell details</b></summary>
+| [Alacritty](macos/terminal/alacritty/.config/alacritty/alacritty.toml) | Catppuccin Frappé, blur, 95% opacity, 30px padding, JetBrainsMono Nerd Font 16, block cursor that goes hollow when unfocused |
+| [zsh + Oh My Zsh](macos/terminal/zsh/.zshrc) | Plugins: git, autosuggestions, syntax highlighting, `z`, `sudo`, web-search |
+| [Powerlevel10k](macos/terminal/zsh/.p10k.zsh) | The prompt. Run `p10k configure` to restyle it |
 
 - **Alacritty:** <kbd>Shift</kbd>+<kbd>Enter</kbd> adds a new line without running the command, <kbd>Option</kbd> works as <kbd>Alt</kbd>, selected text is copied automatically.
-- **Aliases:** `ls l la lla lt` use `lsd` with icons.
-- **fzf** is loaded for fuzzy history, file and folder search.
+- **Aliases:** `ls l la lla lt` use `lsd` with icons. **fzf** is loaded for fuzzy history, file and folder search.
 - **Local settings:** machine-specific things go in `~/.zshrc.local`, which is loaded if it exists and never committed.
 - **`claude` helper:** typing `claude` from your home folder starts Claude Code in `~/projects/work` instead.
 
 </details>
 
+### Apps I use
+
+The ones I use the most and the ones I find useful. *Why: easy to see what's worth installing.*
+
+<details>
+<summary><b>All parts</b></summary>
+
+| Part | What it does |
+|------|--------------|
+| [Homebrew Brewfile](macos/apps/Brewfile) | Every CLI tool, app, font and VS Code extension I use |
+| [LinearMouse](macos/apps/linearmouse/.config/linearmouse/linearmouse.json) | Mouse and trackpad tweaks |
+
+</details>
+
 ## Shared
 
-The parts that don't care which system they run on: the monitor, the editor settings, the Claude Code themes and the wallpapers.
+A few small files used on both systems. Each folder mirrors your home folder, so you can link one or copy the file you want.
+
+<p align="center">
+  <img src="docs/images/shared-structure.svg" alt="shared/ is linked into linux/ and macos/, then into your home folder" width="70%">
+</p>
 
 <details>
 <summary><b>All parts</b></summary>
@@ -133,30 +198,11 @@ The parts that don't care which system they run on: the monitor, the editor sett
 
 </details>
 
-## 🖼️ Wallpapers
-
-Wallpapers and their credits live in [`wallpapers/`](wallpapers/).
-
-## ⌨️ Shortcuts
-
-All my keys and aliases on one page: [`docs/SHORTCUTS.md`](docs/SHORTCUTS.md).
-
----
-
-## 📁 Structure
-
-```
-dotfiles/
-├── macos/          Brewfile, zsh + Powerlevel10k, Alacritty, LinearMouse
-├── linux/          kitty, zsh, oh-my-posh, fastfetch, GNOME
-├── shared/         btop, VS Code, Claude Code themes, bash
-├── wallpapers/     backgrounds and credits
-└── docs/           shortcuts and screenshots
-```
-
-## 🔒 Secrets
-
 No passwords, tokens or keys live in this repo. Private or machine-specific settings go in `~/.zshrc.local`, which git ignores.
+
+## Wallpapers and shortcuts
+
+Wallpapers and their credits live in [`wallpapers/`](wallpapers/). All my keys and aliases are on one page: [`docs/SHORTCUTS.md`](docs/SHORTCUTS.md).
 
 ---
 

@@ -18,7 +18,7 @@ REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 say "VS Code settings + extensions"
 mkdir -p "$HOME/.config/Code/User"
 ln -sfn "$REPO_ROOT/shared/vscode/settings.json" "$HOME/.config/Code/User/settings.json"
-grep -i '^vscode' "$REPO_ROOT/macos/Brewfile" | sed 's/.*"\(.*\)".*/\1/' | while read -r ext; do
+grep -i '^vscode' "$REPO_ROOT/macos/apps/Brewfile" | sed 's/.*"\(.*\)".*/\1/' | while read -r ext; do
   code --install-extension "$ext" --force || echo "Skipped $ext"
 done
 

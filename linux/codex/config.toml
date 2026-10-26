@@ -1,0 +1,45 @@
+model = "gpt-5.6-sol"
+model_reasoning_effort = "medium"
+[desktop]
+followUpQueueMode = "steer"
+conversationDetailMode = "STEPS_PROSE"
+ambient-suggestions-enabled = true
+toys-confetti-enabled = true
+external-agent-import-sync-enabled = true
+appearanceLightCodeThemeId = "codex"
+appearanceDarkCodeThemeId = "codex"
+usePointerCursors = true
+sansFontSize = 16
+codeFontSize = 16
+selected-avatar-id = "hoots"
+
+[desktop.appearanceLightChromeTheme]
+accent = "#0169cc"
+accentSource = "chatgpt"
+contrast = 45
+ink = "#0d0d0d"
+opaqueWindows = false
+surface = "#ffffff"
+
+[desktop.appearanceLightChromeTheme.fonts]
+
+[desktop.appearanceLightChromeTheme.semanticColors]
+diffAdded = "#00a240"
+diffRemoved = "#e02e2a"
+skill = "#751ed9"
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#0169cc"
+accentSource = "chatgpt"
+contrast = 60
+ink = "#fcfcfc"
+opaqueWindows = false
+surface = "#111111"
+
+[desktop.appearanceDarkChromeTheme.fonts]
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#00a240"
+diffRemoved = "#e02e2a"
+skill = "#b06dff"
+

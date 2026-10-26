@@ -1,0 +1,36 @@
+{
+  "enabledPlugins": {
+    "agent-flow@claude-agent-flow": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-agent-flow": {
+      "source": {
+        "source": "github",
+        "repo": "Charlie0113-T/claude-agent-flow"
+      }
+    }
+  },
+  "spinnerVerbs": {
+    "mode": "replace",
+    "verbs": [
+      "Brewing",
+      "Frothing",
+      "Steaming",
+      "Whisking",
+      "Blending",
+      "Sipping",
+      "Pouring",
+      "Grinding",
+      "Stirring",
+      "Latte-arting",
+      "Caramelizing",
+      "Simmering"
+    ]
+  },
+  "pluginConfigs": {},
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
+  "theme": "custom:frappe"
+}

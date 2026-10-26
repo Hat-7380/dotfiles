@@ -46,3 +46,12 @@ Catppuccin Frappé across the desktop: dark mode, adw-gtk3, Papirus icons, purpl
 | `Ctrl+Shift` `+` / `-` / `Backspace` | Font bigger / smaller / reset |
 | `Ctrl+Shift+O` / `Ctrl+Shift+P` | Opacity up / down |
 | `Ctrl+P` / `Ctrl+N` | Search shell history back / forward |
+
+## Backup of the Fedora setup (Oct 2026)
+
+Extra folders saved before moving to Omarchy:
+
+- `linux/terminals/tmux`, `linux/git`: tmux config and git identity
+- `linux/gnome`: GTK 3/4 files and a full `dconf-full.ini` (restore: `dconf load / < dconf-full.ini`)
+- `linux/claude`, `linux/codex`: Claude Code and Codex settings, no logins or history
+- `linux/packages`: the short list of tools, flatpaks and fonts I actually use
